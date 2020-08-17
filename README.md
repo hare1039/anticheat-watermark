@@ -5,6 +5,11 @@ This is a program to compile unique watermarks for a desired pdf. This can help 
 You can download the `.exe` file under the [release tag](https://github.com/hare1039/anticheat-watermark/releases). If you download the `.exe` file in Chrome, the exe. file may be marked as a virus. Please accept to continoue the download. 
 
 # Usage
-- Step 1: Preparing the watermark list (a text file) you want to generate on the desired pdf. 
+- Step 1: Preparing the watermark list (a text file) you want to generate on the desired pdf.
+![](https://i.imgur.com/hMFfxLl.jpg)
 - Step 2: Drag the watermark list and the desired pdf onto the anticheat-watermark `.exe` file. 
+![](https://i.imgur.com/QaOqLzu.jpg)
 - Step 3: A folder under the name of the desired pdf would be generated. All the compiled pdfs would be in that folder.
+![](https://i.imgur.com/SjWrrki.jpg)
+
+
