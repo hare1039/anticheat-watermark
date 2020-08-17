@@ -2,7 +2,7 @@
 This is a program to compile unique watermarks for a desired pdf. This can help instructors to create individualized exams to prevent cheating.
 
 # Installation
-You can download the files under the release tag. When you download the files in Chrome, the file may be marked as a virus. Please accept to continoue the download. 
+You can download the exe. file under the release tag. If you download the exe. file in Chrome, the exe. file may be marked as a virus. Please accept to continoue the download. 
 
 # Usage
 - Step 1: Preparing the watermark list (a text file) you want to generate on the desired pdf. 
