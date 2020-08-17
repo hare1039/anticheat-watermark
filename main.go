@@ -76,7 +76,7 @@ func drawOnePage(c *creator.Creator, word string) {
 				Fontsize: 12,
 				X:        x,
 				Y:        y,
-				Color:    "ECECEC",
+				Color:    "E1E0E0",
 				Angle:    0,
 			}
 			//			fmt.Println("Draw at", x, y)
