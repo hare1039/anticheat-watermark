@@ -10,6 +10,6 @@ You can download the `.exe` file under the [release tag](https://github.com/hare
 - Step 2: Drag the watermark list and the desired pdf onto the anticheat-watermark `.exe` file. 
 ![](https://i.imgur.com/QaOqLzu.jpg)
 - Step 3: A folder under the name of the desired pdf would be generated. All the compiled pdfs would be in that folder.
-![](https://i.imgur.com/SjWrrki.jpg)
+![](https://i.imgur.com/WbxmbeL.jpg)
 
 
