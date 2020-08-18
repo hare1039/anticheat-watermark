@@ -4,6 +4,9 @@ This is a program to compile unique watermarks for a desired pdf. This can help 
 # Installation
 You can download the `.exe` file under the [release tag](https://github.com/hare1039/anticheat-watermark/releases). If you download the `.exe` file in Chrome, the exe. file may be marked as a virus. Please accept to continoue the download. 
 
+- [Windows Usage](https://github.com/hare1039/anticheat-watermark#windows-usage)
+- [Mac Usage](https://github.com/hare1039/anticheat-watermark#mac-usage)
+
 # Windows Usage 
 - Step 1: Preparing the watermark list (a text file) you want to generate on the desired pdf.
 ![](https://i.imgur.com/hMFfxLl.jpg)
@@ -16,7 +19,7 @@ You can download the `.exe` file under the [release tag](https://github.com/hare
 # Mac Usage 
 - Step 1: Download from [release page](https://github.com/hare1039/anticheat-watermark/releases)
 
-![](https://i.imgur.com/YNmtI2M.png)
+![](https://i.imgur.com/RYFan72.png)
 - Step 2: Open Terminal.app
 
 ![](https://i.imgur.com/LZCNaoJ.png)
