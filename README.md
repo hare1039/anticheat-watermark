@@ -14,7 +14,7 @@ You can download the `.exe` file under the [release tag](https://github.com/hare
 ![](https://i.imgur.com/MPqVuot.jpg)
 
 # Mac Usage 
-- Step 1: Download from release page
+- Step 1: Download from [release page](https://github.com/hare1039/anticheat-watermark/releases)
 
 ![](https://i.imgur.com/YNmtI2M.png)
 - Step 2: Open Terminal.app
