@@ -6,7 +6,7 @@ This is a program to compile unique watermarks for a desired pdf. This can help 
 - [Mac User](https://github.com/hare1039/anticheat-watermark#mac-usage)
 
 # Windows User
-- Step 1: Download the `.exe` file under the [release tag](https://github.com/hare1039/anticheat-watermark/releases). If you download the `.exe` file in Chrome, the exe. file may be marked as a virus. Please accept it to continoue the download. 
+- Step 1: Download `anticheat-watermark_windows_amd64.exe` file under the [release tag](https://github.com/hare1039/anticheat-watermark/releases). If you download the `.exe` file in Chrome, the exe. file may be marked as a virus. Please accept it to continoue the download. 
 
 ![](https://i.imgur.com/7tAbN2Y.png)
 - Step 2: Prepare the watermark list (a text file, see picture for an example) you want to generate on the desired pdf.
