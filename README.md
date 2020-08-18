@@ -17,7 +17,7 @@ You can download the `.exe` file under the [release tag](https://github.com/hare
 ![](https://i.imgur.com/MPqVuot.jpg)
 
 # Mac Usage 
-- Step 1: Download from [release page](https://github.com/hare1039/anticheat-watermark/releases)
+- Step 1: Go to [release page](https://github.com/hare1039/anticheat-watermark/releases), and download `anticheat-watermark_darwin_amd64`
 
 ![](https://i.imgur.com/RYFan72.png)
 - Step 2: Open Terminal.app
