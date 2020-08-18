@@ -126,21 +126,23 @@ func drawPDF(wg *sync.WaitGroup, pdffile string, word string, output string) {
 }
 
 func main() {
-	if len(os.Args) != 3 {
-		fmt.Println("Please drag the name-file.txt and the pdf file on this executable")
-		fmt.Scanln()
-	}
-
 	var pdffile, namefile string
-	if strings.Contains(os.Args[1], "pdf") {
+	if len(os.Args) != 3 {
+		fmt.Println("Please drag the name-file.txt and the pdf file on this executable or drag them here")
+		fmt.Scan(&pdffile)
+		fmt.Scan(&namefile)
+	} else {
 		pdffile = os.Args[1]
 		namefile = os.Args[2]
-	} else if strings.Contains(os.Args[2], "pdf") {
-		pdffile = os.Args[2]
-		namefile = os.Args[1]
+	}
+
+	if strings.Contains(pdffile, "pdf") {
+	} else if strings.Contains(namefile, "pdf") {
+		pdffile, namefile = namefile, pdffile
 	} else {
 		fmt.Println("Can't find 'pdf' in argv")
 		fmt.Scanln()
+		return
 	}
 
 	fp, err := os.Open(namefile)
