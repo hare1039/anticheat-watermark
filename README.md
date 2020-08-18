@@ -23,7 +23,7 @@ You can download the `.exe` file under the [release tag](https://github.com/hare
 - Step 2: Open Terminal.app
 
 ![](https://i.imgur.com/LZCNaoJ.png)
-- Step 3: type `chmod +x ${FILE}`
+- Step 3: type `chmod +x [FILE]`. `[FILE]` = The file you just downloaded.
 
 ![](https://i.imgur.com/Hr0VyVi.png)
 - Step 4: Right click => Open
