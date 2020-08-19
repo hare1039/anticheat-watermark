@@ -53,6 +53,7 @@ func main() {
 		panic(err)
 	}
 	defer fp.Close()
+	scanner := bufio.NewScanner(fp)
 
 	fullName := strings.Split(filepath.Base(pdffile), ".")[0]
 	os.Chdir(filepath.Dir(pdffile))
@@ -63,7 +64,6 @@ func main() {
 		fmt.Scanln()
 		panic(err)
 	}
-	scanner := bufio.NewScanner(fp)
 
 	fmt.Println("Start adding anti-cheat watermark")
 	var wg sync.WaitGroup
