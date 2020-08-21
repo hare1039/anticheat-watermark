@@ -69,6 +69,9 @@ func ZipFiles(filename string, files []string) error {
 }
 
 func Generate(c *gin.Context) {
+	userPass := c.PostForm("user_pass")
+	ownerPass := c.PostForm("owner_pass")
+
 	form, err := c.MultipartForm()
 	if err != nil {
 		c.String(http.StatusBadRequest, fmt.Sprintf("get form err: %s", err.Error()))
@@ -118,7 +121,7 @@ func Generate(c *gin.Context) {
 		name := scanner.Text()
 		wg.Add(1)
 		AllGeneratedPDF = append(AllGeneratedPDF, dir+"/generated/"+name+".pdf")
-		go watermark.DrawPDF(&wg, pdffile, name, dir+"/generated/"+name+".pdf")
+		go watermark.DrawPDF(&wg, pdffile, name, dir+"/generated/"+name+".pdf", userPass, ownerPass)
 	}
 	wg.Wait()
 

@@ -82,7 +82,7 @@ func drawOnePage(c *creator.Creator, word string) {
 	}
 }
 
-func DrawPDF(wg *sync.WaitGroup, pdffile string, word string, output string) {
+func DrawPDF(wg *sync.WaitGroup, pdffile string, word string, output string, userPass string, ownerPass string) {
 	fmt.Println("Starting on: ", word)
 	defer wg.Done()
 
@@ -119,9 +119,9 @@ func DrawPDF(wg *sync.WaitGroup, pdffile string, word string, output string) {
 		}
 	}
 	c.SetPdfWriterAccessFunc(func(w *model.PdfWriter) error {
-		userPass := []byte("")
-		ownerPass := []byte("")
-		err := w.Encrypt(userPass, ownerPass, &model.EncryptOptions{
+		userP := []byte(userPass)
+		ownerP := []byte(ownerPass)
+		err := w.Encrypt(userP, ownerP, &model.EncryptOptions{
 			Permissions: core.AccessPermissions{
 				Printing:          false,
 				Modify:            false,
@@ -139,9 +139,9 @@ func DrawPDF(wg *sync.WaitGroup, pdffile string, word string, output string) {
 	fmt.Println(word, " finished")
 }
 
-func DrawPDFSingle(pdffile string, word string, output string) {
+func DrawPDFSingle(pdffile string, word string, output string, userPass string, ownerPass string) {
 	var wg sync.WaitGroup
 	wg.Add(1)
-	go DrawPDF(&wg, pdffile, word, output)
+	go DrawPDF(&wg, pdffile, word, output, userPass, ownerPass)
 	wg.Wait()
 }

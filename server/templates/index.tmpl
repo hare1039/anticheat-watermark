@@ -4,7 +4,9 @@
         <h1>Anticheat Watermark</h1>
         <p>Please upload the files</p>
         <form action="/generate" method="post" enctype="multipart/form-data">
-            Files: <input type="file" name="files" multiple><br><br>
+            Files: <input type="file" name="files" multiple><br>
+            Set user (open) password: <input name="user_pass"><br>
+            Set owner password: <input name="owner_pass"><br>
             <input type="submit" value="Generate">
         </form>
     </body>

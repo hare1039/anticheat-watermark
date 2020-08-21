@@ -13,9 +13,9 @@ import (
 )
 
 func main() {
+	scanner := bufio.NewScanner(os.Stdin)
 	var pdffile, namefile string
 	if len(os.Args) != 3 {
-		scanner := bufio.NewScanner(os.Stdin)
 		fmt.Print("Please enter the pdf file: ")
 		scanner.Scan()
 
@@ -46,6 +46,14 @@ func main() {
 		return
 	}
 
+	fmt.Print("Please enter user (open) password: ")
+	scanner.Scan()
+	userPass := strings.TrimSpace(scanner.Text())
+
+	fmt.Print("Please enter owner password: ")
+	scanner.Scan()
+	ownerPass := strings.TrimSpace(scanner.Text())
+
 	fp, err := os.Open(namefile)
 	if err != nil {
 		fmt.Println(err, "Abort.")
@@ -53,7 +61,7 @@ func main() {
 		panic(err)
 	}
 	defer fp.Close()
-	scanner := bufio.NewScanner(fp)
+	scanner = bufio.NewScanner(fp)
 
 	fullName := strings.Split(filepath.Base(pdffile), ".")[0]
 	os.Chdir(filepath.Dir(pdffile))
@@ -70,7 +78,7 @@ func main() {
 	for scanner.Scan() {
 		name := scanner.Text()
 		wg.Add(1)
-		go watermark.DrawPDF(&wg, pdffile, name, fullName+"/"+name+".pdf")
+		go watermark.DrawPDF(&wg, pdffile, name, fullName+"/"+name+".pdf", userPass, ownerPass)
 	}
 	wg.Wait()
 }
