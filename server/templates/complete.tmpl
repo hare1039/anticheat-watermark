@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <a href="{{ .downloadURL }}"> download here </a>
+        <a href="{{ .downloadURL }}"> download here </a> <br />
+        <button onclick="request_delete()" id="delete_btn" type="button"> Click here to delete the zip file on the server after you download it </button>
+        <p id="result"></p>
+        <script type="text/javascript">
+            function request_delete()
+            {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("DELETE", "/delete/{{ .ZipName }}", true);
+                xhttp.onreadystatechange=function()
+                {
+                    let result = document.getElementById("result");
+                    result.textContent = xhttp.responseText;
+                }
+                xhttp.send();
+            }
+        </script>
     </body>
 </html>

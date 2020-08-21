@@ -123,9 +123,10 @@ func Generate(c *gin.Context) {
 	wg.Wait()
 
 	fullName := strings.Split(filepath.Base(pdffile), ".")[0]
-	ZipFiles("static/"+fullName+".zip", AllGeneratedPDF)
+	ZipFiles("generated/"+fullName+".zip", AllGeneratedPDF)
 	c.HTML(http.StatusOK, "complete.tmpl", gin.H{
-		"downloadURL": "/static/" + url.PathEscape(fullName+".zip"),
+		"downloadURL": "/generated/" + url.PathEscape(fullName+".zip"),
+		"ZipName":     url.PathEscape(fullName + ".zip"),
 	})
 }
 
@@ -133,11 +134,25 @@ func MainPage(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{})
 }
 
+func DeleteGenerated(c *gin.Context) {
+	name := c.Param("filename")
+	if strings.Contains(name, "..") {
+		c.String(http.StatusBadRequest, "Sorry, bad request")
+	} else {
+		name = "generated/" + name
+		log.Println("Delete: ", name)
+		os.Remove(name)
+		c.String(http.StatusOK, name+" deleted")
+	}
+}
+
 func main() {
 	r := gin.Default()
 	r.GET("/", MainPage)
 	r.POST("/generate", Generate)
+	r.DELETE("/delete/:filename", DeleteGenerated)
 	r.LoadHTMLGlob("templates/*")
 	r.Static("/static", "./static")
+	r.Static("/generated", "./generated")
 	r.Run(":9000")
 }
