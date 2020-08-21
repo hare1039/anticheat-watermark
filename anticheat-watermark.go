@@ -5,6 +5,7 @@ import (
 	"os"
 	"sync"
 
+	"github.com/unidoc/unidoc/pdf/core"
 	"github.com/unidoc/unidoc/pdf/creator"
 	"github.com/unidoc/unidoc/pdf/model"
 	"github.com/unidoc/unidoc/pdf/model/fonts"
@@ -117,6 +118,23 @@ func DrawPDF(wg *sync.WaitGroup, pdffile string, word string, output string) {
 			panic(err)
 		}
 	}
+	c.SetPdfWriterAccessFunc(func(w *model.PdfWriter) error {
+		userPass := []byte("")
+		ownerPass := []byte("")
+		err := w.Encrypt(userPass, ownerPass, &model.EncryptOptions{
+			Permissions: core.AccessPermissions{
+				Printing:          false,
+				Modify:            false,
+				ExtractGraphics:   false,
+				Annotate:          false,
+				FillForms:         false,
+				DisabilityExtract: false,
+				RotateInsert:      false,
+				FullPrintQuality:  false,
+			},
+		})
+		return err
+	})
 	_ = c.WriteToFile(output)
 	fmt.Println(word, " finished")
 }
