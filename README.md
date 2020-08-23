@@ -2,8 +2,8 @@
 This is a program to compile unique watermarks for a desired pdf. This can help instructors to create individualized exams to prevent cheating.
 
 # Usage
-- [Windows User](https://github.com/hare1039/anticheat-watermark#windows-usage)
-- [Mac User](https://github.com/hare1039/anticheat-watermark#mac-usage)
+- [Windows User](#windows-user)
+- [Mac User](#mac-user)
 
 # Windows User
 - Step 1: Download `anticheat-watermark_windows_amd64.exe` file under the [release tag](https://github.com/hare1039/anticheat-watermark/releases). If you download the `.exe` file in Chrome, the exe. file may be marked as a virus. Please accept it to continoue the download. 
